@@ -47,7 +47,7 @@ const PRODUCTS = [
         name: "Marquise",
         category: "Marquise",
         price: 800,
-        shortDesc: "Pura decadencia.",
+        shortDesc: "Irresistible",
         longDesc: "Base densa de chocolate, dulce de leche repostero y merengue italiano.",
         image: "🍰",
         isLimited: false
@@ -130,3 +130,4 @@ const PRODUCTS = [
 
 // Export for usage if needed in module environments, but we are using vanilla JS script tags
 if (typeof module !== 'undefined') module.exports = PRODUCTS;
+

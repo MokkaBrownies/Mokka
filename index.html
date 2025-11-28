@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mökka - Brownies premium artesanales. Intensos, húmedos, hechos con cacao de verdad.">
+    <meta name="theme-color" content="#3A1F14">
+    <title>Mökka - Brownies Premium</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@400;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Preload critical assets -->
+    <!-- <link rel="preload" href="fonts/Glicker.woff2" as="font" type="font/woff2" crossorigin> -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- Dynamic Content will be rendered here -->
+    </div>
+
+    <!-- Cart Bottom Sheet -->
+    <div id="cart-overlay" class="overlay hidden"></div>
+    <aside id="cart-sheet" class="cart-sheet hidden" aria-hidden="true">
+        <div class="cart-header">
+            <h2>Tu Pedido</h2>
+            <button id="close-cart" class="btn-icon" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be rendered here -->
+            <div class="empty-cart-msg">
+                <p>Tu carrito está vacío</p>
+                <button class="btn-text" onclick="window.location.hash=''">Ver productos</button>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary full-width" disabled>Finalizar compra</button>
+        </div>
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Finalizar Pedido</h2>
+                <button id="close-checkout" class="btn-icon" aria-label="Cerrar">✕</button>
+            </div>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo *</label>
+                    <input type="text" id="name" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono (WhatsApp) *</label>
+                    <input type="tel" id="phone" required placeholder="Ej: 2622675384">
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección de envío *</label>
+                    <input type="text" id="address" required placeholder="Calle, número, ciudad">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Método de pago</label>
+                    <div class="payment-options">
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="efectivo" checked>
+                            Efectivo
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="transferencia">
+                            Transferencia
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Observaciones</label>
+                    <textarea id="notes" rows="2" placeholder="Aclaraciones, dedicatoria, etc."></textarea>
+                </div>
+
+                <div class="checkout-summary" id="checkout-summary">
+                    <!-- Summary injected here -->
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width">Confirmar pedido en WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FAB -->
+    <button id="cart-fab" class="fab" aria-label="Ver carrito">
+        🛒
+        <span id="cart-count" class="badge hidden">0</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="data/products.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

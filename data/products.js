@@ -1,6 +1,20 @@
 const PRODUCTS = [
     // Brownies
     {
+        id: "personal",
+        slug: "mimo-a-medida",
+        name: "Mimo (Brownie a medida)",
+        category: "Brownies",
+        label: "Personal",
+        price: 950,
+        isLimited: false,
+        isCustom: true,
+        placeholderEmoji: "🎨",
+        shortDesc: "Tu brownie hecho como lo querés.",
+        longDesc: "Elige base, intensidad de chocolate y toppings para crear tu brownie perfecto.",
+        image: "🎨"
+    },
+    {
         id: "brownie-limon",
         name: "Brownie Limón",
         category: "Brownies",
@@ -47,7 +61,7 @@ const PRODUCTS = [
         name: "Marquise",
         category: "Marquise",
         price: 800,
-        shortDesc: "Irresistible",
+        shortDesc: "Pura decadencia.",
         longDesc: "Base densa de chocolate, dulce de leche repostero y merengue italiano.",
         image: "🍰",
         isLimited: false
@@ -130,4 +144,3 @@ const PRODUCTS = [
 
 // Export for usage if needed in module environments, but we are using vanilla JS script tags
 if (typeof module !== 'undefined') module.exports = PRODUCTS;
-
